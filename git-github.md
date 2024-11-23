@@ -1,1 +1,1 @@
-<center># git & github</center>
+# git & github
