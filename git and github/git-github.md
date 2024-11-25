@@ -76,27 +76,31 @@ it is used for
 
 ## Types of changes
 
-#### 1) untracked
+### 1) untracked
 - these files are newly created files.
 - this is shown by symbol 'u' in vs code
 - red color in cmd
 
-#### 2) modified
+### 2) modified
 - any changes in existing files.
 - this is shown by symbol 'm' in vs code
 - red color in cmd
 
-#### 3) staged
+### 3) staged
 - files ready to commit.
 - green color in cmd
 
 
 ## Share and Update
 
-#### copying
+### copying
 - add remote repository from local directory
 ```bash
     git remote add origin
+```
+- remove repository
+```bash
+    git remote remove origin
 ```
 - fetch down all the branches from that Git remote
 ```bash
@@ -110,7 +114,7 @@ it is used for
     git merge origin/'branch_name'
 ```
 
-#### push command
+### push command
 - Transmit local branch commits to the remote repository branch
 ```bash
     git push origin 'branch_name'
@@ -119,7 +123,7 @@ it is used for
 ```bash
     git push -u origin 'branch_name'
 ```
-#### pull command
+### pull command
 - fetch and merge any commits from the tracking remote branch
 ```bash
     git pull
@@ -128,7 +132,7 @@ it is used for
     git pull origin 'branch_name'
 ```
 ## Branch and Merge
-#### Branch
+### Branch
 
 - list all the branches. * symbol shows the current branch
 ```bash
@@ -158,21 +162,20 @@ it is used for
 ```bash
     git diff 'other_branch_name'
 ```
-#### Merge
+### Merge
 - merge the specified branch’s history into the current one
 ```bash
     git merge 'branch_name'
 ```
 - send pull request in github repository, if merge conflict choose to resolve the conflict
 
-#### Merge conflicts resolve options
+### Merge conflicts resolve options
 * Accept current change
 * Accept incoming change
 * Accept Both changes
 * manually change the code
 
-#### logs
-
+### logs
 - show all commits in the current branch’s history and enter 'q' to exit
 ```bash
     git log
