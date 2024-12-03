@@ -22,7 +22,7 @@ const todoSchema = new mongoose.Schema({
 
 },{timestamps:true})
 
-export const Todo = mongoose.model("Todo", userSchema)
+export const Todo = mongoose.model("Todo", todoSchema)
 ```
 - replace 'user' with your 'your_schema_name'. and match the Capital letters and lowercas letters 
 - { timestamps : true } records the timestamps of created time and updated time
@@ -44,7 +44,9 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : [true, 'errro message : this field cannot be empty'],
         unique : [true, 'error message : username already exsists'],
-        default : 'newUser1'
+        default : 'newUser1',
+        trim : true,
+        index: true
     },
     password:{
         type : String,

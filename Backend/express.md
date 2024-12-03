@@ -1,5 +1,46 @@
 # Express JS
+## best sources to study
+- [chai aur code backend playlist](https://youtube.com/playlist?list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW&si=ySch-0H1FKFLa6rS)
 
+## generating hash code in terminal
+```bash
+    node
+```
+```bash
+    require('crypto').randomBytes(64).toString('hex')
+```
+
+## using json web token (JWT)
+```bash
+    npm i jsonwebtoken
+```
+```bash
+    import jwt from 'jsonwebtoken'
+```
+### signing the data
+```bash
+    const token = await jwt.sign(
+            { username : "nandish" },
+            process.env.JWT_SECRET_KEY,
+            { expiresIn: "1d" }
+        );
+```
+
+## cookie options
+```bash
+{
+    httpOnly : true, //accessible only by webrequest
+    secure : true, //https
+    sameSite : 'None', //allows cross site cookies
+    maxAge : 7 * 24 * 60 * 60 *1000 //max age of expiry of cookies
+}
+```
+
+
+
+
+
+# Express setup
 ## initialize npm
 initializing any directory into npm
 ```bash
@@ -20,8 +61,16 @@ initializing any directory into npm
 - express
 - dotenv
 - mongoose
+- mongodb
+- cookie-parser
+- cors
+- mongoose-aggregate-paginate-v2
+- jsonwebtoken
+- bcrypt
+- cloudinary
+- multer
 ```bash
-    npm install express dotenv mongoose
+    npm install express dotenv mongoose mongodb cookie-parser cors mongoose-aggregate-paginate-v2 jsonwebtoken bcrypt cloudinary multer
 ```
 ### Compulsory Developer Dependencies
 - nodemon
@@ -219,12 +268,14 @@ dist
 ```bash
 git remote add starter https://github.com/NandishBS/express-starter-template.git
 git pull starter main --allow-unrelated-histories --no-edit
+mv .env.sample .env
 git remote remove starter
 npm init -y
 sed -i '/"main":/a\  "type": "module",' package.json
 sed -i '/"scripts": {/a\    "dev": "nodemon src/index.js",' package.json
 npm install -D prettier nodemon
-npm install express dotenv mongoose
+npm install express dotenv mongoose mongodb cookie-parser cors mongoose-aggregate-paginate-v2 jsonwebtoken bcrypt cloudinary multer
 git add .
 git commit -m 'express setup completed'
 ```
+
